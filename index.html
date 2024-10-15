@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-image: url('fish.webp');
+            background-size: 200px 200px;
+            background-repeat: repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        #card-container {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        #giver-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        #present {
+            width: 150px;
+            height: 150px;
+            background: url('present.webp') no-repeat center;
+            background-size: contain;
+            cursor: pointer;
+        }
+
+        #present-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #message {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        #message p {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #2b6cb0; /* A pleasant shade of blue */
+            font-weight: bold;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="present-container">
+        <div id="present" onclick="openCard()"></div>
+    </div>
+
+    <div id="card-container">
+        <img id="giver-image" src="givers.png" alt="Giver Image">
+        <div id="message">
+            <p>Kære Katja og Anneline,</p>
+            <p>Stort tillykke med de <span class="highlight">38</span>.</p>
+            <p>Vi vil gerne invitere jer på restaurant <a href="https://www.sushianaba.com/" target="_blank" class="link">Sushi Anaba</a> den <span class="highlight">19. januar</span> med børnene passet, hvor vi vil gøre alt for at I får en uforglemmelig aften.</p>
+            <p>Kærlig hilsen</p>
+            <p>jeres skatter</p>
+            <p><span class="highlight">Anders og Mikkel</span></p>
+        </div>
+    </div>
+
+    <script>
+        function openCard() {
+            document.getElementById('present-container').style.display = 'none';
+            document.getElementById('card-container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
